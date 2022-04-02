@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg,lightgreen,white,lightgreen) no-repeat;
+    background-size: 100vw 100vh;
+}
+.bg{
+    background: rgba(255,255,255,0.2) no-repeat;
+    width: 100vw;
+    height:  100vh;
+}

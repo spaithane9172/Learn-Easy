@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.dropdown{
+    width: 90%;
+    border-bottom: 2px solid black; 
+}
+.dropdown,.dropdown label{
+    cursor: pointer;
+}
+.dropdownlist{
+    width: 90%;
+    border: 2px solid black;
+    padding: 2vh 2vh;
+    padding-left: 10vh;
+    display: none;
+}
+.dropdown label{
+    color: black;
+    font-weight: 500;
+}
+.dropdowntitle{
+    width: 100%;
+}
