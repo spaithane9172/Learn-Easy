@@ -29,54 +29,48 @@ function cpshow_hide(){
         eye4.style.display="none";
     } 
 }
-let dropdown_status=true;
-let question="";
-function question1(){
-    question="What is the name of your first pet?";
-    dropdown();
+function isalpha(uname){
+    var temp;
+    for(i=0;i<uname.length;i++){
+        if((uname[i]>="A" && uname[i]<="Z") || (uname[i]>="a" && uname[i]<="z")){
+            temp=true;
+        }
+        else{
+            temp=false;
+            break;
+        }
+    }
+    return temp;
 }
-function question2(){
-    question="What was your first car?";
-    dropdown();
-}
-function question3(){
-    question="What elementary school did you attend?";
-    dropdown();
-}
-function question4(){
-    question="What is the name of the town where you were born?";
-    dropdown();
-}
-function question5(){
-    question="What is your mother's maiden name?";
-    dropdown();
-} 
-function dropdown(){
-    let dropdownlist=document.querySelector("#dropdownlist");
-    let dropdowntitle = document.querySelector("#dropdowntitle label");
-    console.log("object")
+function signupfun(){
+    uname=document.getElementById("Uname").value;
+    email=document.getElementById("Email").value;
+    passw=document.getElementById("password").value;
+    cpassw=document.getElementById("cpassword").value;
+    selectv=document.getElementById("question").value;
+    ans=document.getElementById("answer").value;
+    if(uname.length<3 || !isalpha(uname)){
+        document.getElementById("error").innerHTML="Enter Currect Name";
+    }
+    else if(!email.includes("@") || !email.includes(".") || email.length<7){
+        document.getElementById("error").innerHTML="Enter Currect Email Id";
+    }
+    else if(passw.length<8){
+        document.getElementById("error").innerHTML="Password Length must be 8 ";
+    }
+    else if(!(passw==cpassw)){
+        document.getElementById("error").innerHTML="Password and Conform Password does not match ";
+    }
+    else if(selectv=="question1"){
+        document.getElementById("error").innerHTML="Select Security Question";
+    }
     
-    if(dropdown_status){
-        dropdownlist.style.display="block";
-        dropdown_status=false;
+    else if(ans.length==0){
+        document.getElementById("error").innerHTML="Enter Security Question Answer";
     }
     else{
-        dropdownlist.style.display="none";
-        dropdown_status=true;
+        window.location.href=`./php/signup.php?Uname=${uname}&Email=${email}&Passw=${passw}&SecurityQ=${selectv}&sqanswer=${ans}`;
     }
-    if(question=="What is the name of your first pet?"){
-        dropdowntitle.innerHTML=question;
-    }
-    else if(question=="What was your first car?"){
-        dropdowntitle.innerHTML=question;
-    }
-    else if(question=="What elementary school did you attend?"){
-        dropdowntitle.innerHTML=question;
-    }
-    else if(question=="What is the name of the town where you were born?"){
-        dropdowntitle.innerHTML=question;
-    }
-    else if(question=="What is your mother's maiden name?"){
-        dropdowntitle.innerHTML=question;
-    }
+    
+    event.preventDefault();
 }

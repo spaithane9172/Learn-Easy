@@ -52,7 +52,7 @@
   </nav>
 
   <div class="container-fluid d-flex justify-content-center align-items-center">
-    <div class="form-box">
+    <div class="form-box mb-4">
       <div class="row">
         <div class="col-6 d-flex justify-content-center align-items-center">
           <a href="sign-in.html">
@@ -64,49 +64,47 @@
             <h4 class="bb">Sign Up</h4>
           </a>
         </div>
-        <div class="row mt-3">
+        <div class="row mt-2 mt-md-3">
           <div class="col-12 d-flex justify-content-center align-items-center">
-            <form class="d-flex justify-content-center align-items-center flex-column" action="">
-              <div class="email-in mb-4">
+            <form method="post" class="d-flex justify-content-center align-items-center flex-column">
+              <div>
+                <b><p id="error" style="color:red;"></p></b>
+              </div>
+              <div class="email-in mb-md-4">
                 <i class="fa-solid fa-user"></i>
-                <input placeholder="Enter Your Name" type="text">
+                <input placeholder="Enter Your Name" name="Uname" id="Uname" type="text">
               </div>
-              <div class="email-in mb-4">
+              <div class="email-in mb-md-4">
                 <i class="fa-solid fa-envelope"></i>
-                <input placeholder="Enter Email" type="email">
+                <input placeholder="Enter Email" name="Email" id="Email" type="email">
               </div>
-              <div class="password-in mb-4">
+              <div class="password-in mb-md-4">
                 <i class="fa-solid fa-key"></i>
-                <input id="password" placeholder="Enter Password" type="password">
+                <input id="password" name="Passw" placeholder="Enter Password" type="password">
                 <label><i id="eye" onclick="show_hide()" class="fa-solid fa-eye"></i>
                   <i id="eye-slash" onclick="show_hide()" class="fa-solid fa-eye-slash"></i></label>
               </div>
-              <div class="password-in mb-4">
+              <div class="password-in mb-3 mb-md-4">
                 <i class="fa-solid fa-key"></i>
-                <input id="cpassword" placeholder="Enter Confirm Password" type="password">
+                <input id="cpassword" name="Cpass" placeholder="Enter Confirm Password" type="password">
                 <label><i id="cpeye" onclick="cpshow_hide()" class="fa-solid fa-eye"></i>
                   <i id="cpeye-slash" onclick="cpshow_hide()" class="fa-solid fa-eye-slash"></i></label>
               </div>
-              <div id="dropdowntitle" onclick="dropdown()" class="dropdown pb-2 mb-4 d-flex justify-content-between">
-                <div>
+              <div class="dropdown pb-2 mb-md-4 d-flex justify-content-between">
                   <i class="fa-solid fa-circle-question"></i>
-                  <label class="ms-3"> Select Verificatiion Question</label>
-                </div>
-                <div>
-                  <i class="fa-solid fa-caret-down me-3"></i>
-                </div>
+                  <select name="SecurityQ" id="question">
+                    <option value="question1">Select Verificatiion Question</option>
+                    <option value="question2">What is the name of your first pet?</option>
+                    <option value="question3">What was your first car?</option>
+                    <option value="question4">What elementary school did you attend?</option>
+                    <option value="question5">What is the name of the town where you were born?</option>
+                    <option value="question6">What is your mother's maiden name?</option>
+                  </select>
               </div>
-              <div id="dropdownlist" class="dropdownlist mb-4">
-                <p onclick="question1()">What is the name of your first pet?</p>
-                <p onclick="question2()">What was your first car?</p>
-                <p onclick="question3()">What elementary school did you attend?</p>
-                <p onclick="question4()">What is the name of the town where you were born?</p>
-                <p onclick="question5()">What is your mother's maiden name?</p>
+              <div class="email-in mb-md-4">
+                <input placeholder="Enter Answer" id="answer" name="sqanswer" type="text">
               </div>
-              <div class="email-in mb-4">
-                <input placeholder="Enter Answer" type="text">
-              </div>
-              <button class="mt-4 mb-4">Sign Up</button>
+              <button class="mt-4 mb-4" onclick="signupfun()">Sign Up</button>
             </form>
           </div>
         </div> 

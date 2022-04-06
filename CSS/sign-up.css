@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background: url("../img/bg.gif") no-repeat;
-    background-size: cover;
+    background-size: 100vw 100vh;
 }
 .signin-body{
     width: 100vw;
@@ -61,12 +61,21 @@ body{
     color: black;
     font-weight: 500;
 }
-form input {
+form input{
     padding-left: 1vw;
     border: none;
     outline: none;
     font-weight: 500;
     background: transparent;
+}
+select{
+    width: 95%;
+    background: transparent !important;
+    padding: 0;
+    border: none;
+    outline: none;
+    height: 5vh;
+    font-weight: 500;
 }
 form input::placeholder {
     color: black;
@@ -116,7 +125,23 @@ form p a:hover{
 .row {
     --bs-gutter-x: 0rem;
 }
+@media (min-width:992px){
+    body{
+        background-size: cover;
+    }
+}
 @media (min-width:768px) and (max-width:992px){
+    body{
+        background-size: cover;
+    }
+    .form-box{
+        width: 60vw;
+    }
+    .email-in, .password-in,.dropdown{
+        font-size: 2vw;
+        width: 50vw;
+        border-bottom: 2px solid black;
+    }s
     form input[type=email] {
         width: 90%;
         height: 7vh;   
@@ -128,10 +153,9 @@ form p a:hover{
 @media (max-width:768px) and (min-width:576px){
     .form-box{
         width: 60vw;
-        height: 65vh;
     }
-    .email-in, .password-in{
-        width: 100%;
+    .email-in, .password-in,.dropdown{
+        width: 50vw;
         border-bottom: 2px solid black;
     }
     form input[type=email] {
@@ -149,11 +173,10 @@ form p a:hover{
 }
 @media (max-width:576px) and (min-width:450px){
     .form-box{
-        width: 60vw;
-        height: 65vh;
+        width: 80vw;
     }
-    .email-in, .password-in{
-        width: 100%;
+    .email-in, .password-in,.dropdown{
+        width: 65vw;
         border-bottom: 2px solid black;
     }
     form input[type=email] {
@@ -172,13 +195,13 @@ form p a:hover{
 @media (max-width:450px) {
     .form-box{
         width: 80vw;
-        height: 55vh;
     }
     .bb{
         border-bottom: 0.5vh solid green;
     }
-    .email-in, .password-in{
-        width: 95%;
+    .email-in, .password-in,.dropdown{
+        width: 60vw;
+        font-size: 3vw;
         border-bottom: 2px solid black;
     }
     form input[type=email] {
@@ -194,7 +217,8 @@ form p a:hover{
         font-size: 3vw;
     }
     form button {
-        width: 40vw;
+        width: 30vw;
         height: 5vh;
+        font-size: 3vw;
     }
 }
