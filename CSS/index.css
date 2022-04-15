@@ -2,6 +2,23 @@ body{
     margin: 0;
     padding: 0;
 }
+.userinfo-box{
+    color:white;
+    background: black;
+    font-weight: 500;
+    width: 18vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    position:absolute;
+    left: 80%;
+} 
+.userinfo-box p{
+    cursor: pointer;
+}
 .bg{
     width: 100vw;
     height: 100vh;
@@ -21,6 +38,7 @@ body{
     position: absolute;
     transform: translate(35%,50%);
 }
+
 @keyframes bg-slideshow{
     0%{
         background: url("../img/bg1.jpg");
@@ -45,5 +63,39 @@ body{
     100%{
         background: url("../img/bg6.jpg");
         background-size: 100vw 100vh;
+    }
+}
+@media(max-width:768px) and (min-width:576px){
+    .userinfo-box{
+        width: 28vw;
+        height: 20vh;
+        left: 70%;
+    }
+}
+@media(min-width:450px) and (max-width:576px){
+    .userinfo-box{
+        width: 28vw;
+        height: 20vh;
+        font-size: 2.5vw;
+        left: 70%;
+    }
+    .home-body p{
+        font-size: 3vw;
+    }
+}
+@media(max-width:450px){
+    .userinfo-box{
+        width: 30vw;
+        height: 15vh;
+        font-size: 2.8vw;
+        left: 70%;
+    }
+    .home-body{
+        width: 80vw;
+        height: 40vh;
+        transform: translate(15%,50%);
+    }
+    .home-body p{
+        font-size: 4vw;
     }
 }

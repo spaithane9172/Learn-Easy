@@ -1,10 +1,10 @@
 <?php
+$userId=$_GET['userId'];
 $uname=$_GET['Uname'];
 $email=$_GET['Email'];
-$pass=$_GET['Passw'];
+$pass=$_GET['Passw']; 
 $squestion=$_GET['SecurityQ'];
 $sqanswer=$_GET['sqanswer'];
-
 //password encryption
 $enc="";
 for($i=1;$i<=strlen($pass); $i++){
@@ -23,7 +23,8 @@ $con=mysqli_connect("localhost","root","","learneasy");
 if(!$con){
     die("Error".mysqli_connect_error());
 }
-$con->query("INSERT INTO `userinfo` (`UserName`,`Email`,`UPassword`,`SecurityQuestion`,`sqAnswer`) VALUE('$uname','$email','$enc','$squestion','$sqanswer')");
+$result=$con->query("UPDATE userinfo SET UserName='$uname',Email='$email',UPassword='$enc',SecurityQuestion='$squestion',sqAnswer='$sqanswer' WHERE ID='$userId'");
+$con->close();
 ?>
 
 
@@ -40,13 +41,6 @@ $con->query("INSERT INTO `userinfo` (`UserName`,`Email`,`UPassword`,`SecurityQue
   <link rel="stylesheet" href="../CSS/sign-up.css">
   <link rel="stylesheet" href="../CSS/navbar.css">
   <script src="https://kit.fontawesome.com/0f60051df1.js" crossorigin="anonymous"></script>
-  <script src="./JS/sign-in.js"></script>
-  <script src="../JS/index.js"></script>
-  <script>
-    function SignIn() {
-        window.location.href = "../sign-in.php";
-    }
-  </script>
 </head>
 
 <body>
@@ -67,10 +61,10 @@ $con->query("INSERT INTO `userinfo` (`UserName`,`Email`,`UPassword`,`SecurityQue
         <h5 class="modal-title">Sign Up</h5>
       </div>
       <div class="modal-body">
-        <p>Sign Up Successfully</p>
+        <p>Profile Updated Successfully</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" onclick="SignIn()" data-bs-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-dark" onclick="profileUpdateRedirect()" data-bs-dismiss="modal">Ok</button>
       </div>
     </div>
   </div>
@@ -80,7 +74,7 @@ $con->query("INSERT INTO `userinfo` (`UserName`,`Email`,`UPassword`,`SecurityQue
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-
+    <script src="../JS/profileUpdate.js"></script>
 </body>
 
 </html>

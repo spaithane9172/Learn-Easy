@@ -2,10 +2,150 @@ body{
     margin: 0;
     padding: 0;
     background: linear-gradient(-45deg,lightgreen,white,lightgreen) no-repeat;
-    background-size: 100vw 100vh;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .bg{
     background: rgba(255,255,255,0.2) no-repeat;
     width: 100vw;
-    height:  100vh;
+    height:  cover;
+}
+.timer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 500;
+    font-size: 2vw;
+    color: blue;
+    position: fixed;
+}
+.s-btn{
+    background-color: black;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+     font-weight: 500;
+     width: 10vw;
+     height: 6vh;
+     font-size: 1.5vw;
+}
+.question{
+    margin-top: 5vh;
+    font-weight: 500;
+    font-size: 1.5vw;
+    word-wrap: break-word;
+}
+.options{
+    margin-top: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 2vw;
+}
+button:disabled{
+    background: rgba(0,0,0,0.7);
+}
+.op label{
+    font-weight: 500;
+    font-size: 1.4vw;
+    margin-left: 1vw;
+    word-wrap: break-word;
+}
+.userinfo-box{
+    color:white;
+    background: black;
+    font-weight: 500;
+    width: 20vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+.userinfo-box p{
+    cursor: pointer;
+}
+@media(min-width:768px) and (max-width:992px){
+    .timer{
+        font-size: 3vw;
+    }
+    .question{
+        font-size: 2.5vw;
+    }
+    .options{
+        margin-bottom: 3vw;
+    }
+    .op label{
+        font-size: 2vw;
+        margin-left: 1vw;
+    }
+    .s-btn{
+         width: 15vw;
+         height: 6vh;
+         font-size: 1.8vw;
+    }
+}
+@media(max-width:768px) and (min-width:576px){
+    .timer{
+        font-size: 4vw;
+    }
+    .question{
+        font-size: 3vw;
+    }
+    .options{
+        margin-bottom: 4vw;
+    }
+    .op label{
+        font-size: 2.5vw;
+        margin-left: 1vw;
+    }
+    .s-btn{
+         width: 15vw;
+         height: 6vh;
+         font-size: 2vw;
+    }
+}
+@media(min-width:450px) and (max-width:576px){
+    .timer{
+        font-size: 4.5vw;
+    }
+    .question{
+        font-size: 3.5vw;
+    }
+    .options{
+        margin-bottom: 10vw;
+    }
+    .op label{
+        font-size: 3vw;
+        margin-left: 1vw;
+    }
+    .s-btn{
+         width: 15vw;
+         height: 5vh;
+         font-size: 2.2vw;
+    }
+}
+@media(max-width:450px){
+    .timer{
+        font-size: 6vw;
+    }
+    .question{
+        margin-top: 3vh;
+        font-size: 4.5vw;
+    }
+    .options{
+        margin-bottom: 10vw;
+    }
+    .op label{
+        font-size: 4vw;
+        margin-left: 1vw;
+    }
+    .s-btn{
+         width: 20vw;
+         height: 5vh;
+         font-size: 2.8vw;
+    }
 }

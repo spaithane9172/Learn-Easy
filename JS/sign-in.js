@@ -32,7 +32,7 @@ function cpshow_hide(){
 function isalpha(uname){
     var temp;
     for(i=0;i<uname.length;i++){
-        if((uname[i]>="A" && uname[i]<="Z") || (uname[i]>="a" && uname[i]<="z")){
+        if((uname[i]>="A" && uname[i]<="Z") || (uname[i]>="a" && uname[i]<="z") || uname[i]==" "){
             temp=true;
         }
         else{
@@ -50,16 +50,16 @@ function signupfun(){
     selectv=document.getElementById("question").value;
     ans=document.getElementById("answer").value;
     if(uname.length<3 || !isalpha(uname)){
-        document.getElementById("error").innerHTML="Enter Currect Name";
+        document.getElementById("error").innerHTML="Enter Correct Name";
     }
     else if(!email.includes("@") || !email.includes(".") || email.length<7){
-        document.getElementById("error").innerHTML="Enter Currect Email Id";
+        document.getElementById("error").innerHTML="Enter Correct Email Id";
     }
     else if(passw.length<8){
         document.getElementById("error").innerHTML="Password Length must be 8 ";
     }
     else if(!(passw==cpassw)){
-        document.getElementById("error").innerHTML="Password and Conform Password does not match ";
+        document.getElementById("error").innerHTML="Password and Confirm Password does not match ";
     }
     else if(selectv=="question1"){
         document.getElementById("error").innerHTML="Select Security Question";

@@ -7,6 +7,7 @@ a{
     background: transparent;
     font-weight: bold;
 }
+
 .nav-link{
     padding: 2vh 1vw;
 }
@@ -36,6 +37,19 @@ a{
     align-items: center;
     font-size: 1vw;
 }
+.rounded-circle{
+    border: 2px solid white;
+    padding:1vh 1vw;
+    display:none;
+}
+.rounded-circle :hover{
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+.rounded-circle i{
+    color:white;
+    font-size: 18px;
+}
 .navbar-brand{
     margin: 0;
     padding: 0;
@@ -51,6 +65,15 @@ a{
     .logo-container p{
         font-size: 2vw;
     }
+    .rounded-circle{
+        border: 2px solid white;
+        padding:1vh 2vw;
+        display:none;
+    }
+    .rounded-circle i{
+        color:white;
+        font-size: 18px;
+    }
 }
 @media (max-width:576px) and (min-width:450px)  {
     .logo{
@@ -60,6 +83,15 @@ a{
     .logo-container p{
         font-size: 2.5vw;
     }
+    .rounded-circle{
+        border: 2px solid white;
+        padding:1vh 2vw;
+        display:none;
+    }
+    .rounded-circle i{
+        color:white;
+        font-size: 18px;
+    }
 }
 @media (max-width:450px) {
     .logo{
@@ -67,6 +99,15 @@ a{
         height: 6vh;
     }
     .logo-container p{
-        font-size: 3vw;
+        font-size: 4vw;
+    }
+    .rounded-circle{
+        border: 2px solid white;
+        padding:1vh 2.5vw;
+        display:none;
+    }
+    .rounded-circle i{
+        color:white;
+        font-size: 18px;
     }
 }

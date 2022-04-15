@@ -5,8 +5,23 @@
 body{
     margin: 0;
     padding: 0;
-    background: url("../img/bg.gif") no-repeat;
-    background-size: 100vw 100vh;
+}
+.userinfo-box{
+    color:white;
+    background: black;
+    font-weight: 500;
+    width: 18vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    position:absolute;
+    left: 80%;
+}
+.userinfo-box p{
+    cursor: pointer;
 }
 .signin-body{
     width: 100vw;
@@ -24,37 +39,17 @@ form .errorbox p{
 }
 .form-box{
     width: 50vw;
-    margin-top: 15vh;
+    margin-top: 10vh;
     height: fit-content;
     border-radius: 10px;
-    background: rgba(255,255,255,0.7);
-    box-shadow: 1px 1px 10px black;
 }
-.form-box .col-6{
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-}
-.form-box .col-6 a{
-    color: black !important;
-}
-.bb{
-    border-bottom: 1vh solid green;
-}
-.form-box h4{
-    padding: 2vh 0;
-    margin: 0;
-    width: 20vw;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5vw;
-}
-.form-box h4:hover{
-    text-shadow: 1px 1px 10px white;
-}
+
 .email-in, .password-in,.dropdown{
-    width: 90%;
-    border-bottom: 2px solid black;
+    width: 40vw;
+    border: 2px solid black;
+    padding-left: 1vw;
+    display: flex;
+    align-items: center;
 }
 .dropdown{
     cursor: pointer;
@@ -130,9 +125,6 @@ form button:hover{
         width: 90%;
         height: 7vh;   
     }
-    .form-box h4{
-        font-size: 2vw;
-    }
 }
 @media (max-width:768px) and (min-width:576px){
     .form-box{
@@ -150,10 +142,11 @@ form button:hover{
         width: 78%;
         height: 7vh;   
     }
-    .form-box h4{
-        font-size: 2vw;
+    .userinfo-box{
+        width: 28vw;
+        height: 20vh;
+        left: 70%;
     }
-   
 }
 @media (max-width:576px) and (min-width:450px){
     .form-box{
@@ -171,10 +164,12 @@ form button:hover{
         width: 78%;
         height: 7vh;   
     }
-    .form-box h4{
-        font-size: 2vw;
+    .userinfo-box{
+        width: 28vw;
+        height: 20vh;
+        font-size: 2.5vw;
+        left: 70%;
     }
-   
 }
 @media (max-width:450px) {
     form .errorbox p{
@@ -184,29 +179,31 @@ form button:hover{
     .form-box{
         width: 80vw;
     }
-    .bb{
-        border-bottom: 0.5vh solid green;
-    }
     .email-in, .password-in,.dropdown{
         width: 60vw;
         font-size: 3vw;
-        border-bottom: 2px solid black;
+        border-bottom: 1px solid black;
     }
     form input[type=email] {
         width: 90%;
-        height: 7vh;   
+        height: 5vh;   
     }
-    form input[type=password],input[type=text] {
+    form input[type=password],input[type=text]{
         width: 78%;
-        height: 7vh;   
+        height: 5vh;   
     }
-    .form-box h4{
-      
-        font-size: 3vw;
+    .dropdown {
+        height: 5vh;  
     }
     form button {
         width: 30vw;
         height: 5vh;
         font-size: 3vw;
+    }
+    .userinfo-box{
+        width: 30vw;
+        height: 15vh;
+        font-size: 2.8vw;
+        left: 70%;
     }
 }
